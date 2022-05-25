@@ -62,6 +62,7 @@ impl<'a> Transcoder<'a> {
     where
         O: Output + Debug,
     {
+        dbg!(format!("type: {}, value: {}, output: {:?}",type_id,value,output));
         self.encoder().encode(type_id, value, output)
     }
 

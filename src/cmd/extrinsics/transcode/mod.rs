@@ -164,6 +164,7 @@ impl<'a> ContractMessageTranscoder<'a> {
 
         let mut encoded = selector.to_bytes().to_vec();
         for (spec, arg) in spec_args.iter().zip(args) {
+            dbg!("{}", &arg);
             let value = scon::parse_value(arg.as_ref())?;
             self.transcoder
                 .encode(spec.ty().ty().id(), &value, &mut encoded)?;
